@@ -1,0 +1,31 @@
+@use "sass:list";
+@use "sass:map";
+
+$devices: (
+  "landscape": 576px,
+  "tablet": 768px,
+  "laptop": 992px,
+  "desktop": 1200px,
+);
+
+$spaces: (
+  "gap": 5px,
+  "small": 10px,
+  "normal": 20px,
+  "big": 40px,
+  "section": 60px,
+);
+
+@mixin size($size) {
+  @each $device, $width in $devices {
+    @if $size == $device {
+      @media (min-width: $width) {
+        @content;
+      }
+    }
+  }
+}
+
+@function space($space) {
+  @return map.get($spaces, $space);
+}
