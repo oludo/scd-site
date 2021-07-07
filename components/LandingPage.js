@@ -18,7 +18,7 @@ export default function LandingPage({
     FacebookPixel = makeFacebookPixel({ ID: "152464016914795" });
     FacebookPixel.initialize();
     FacebookPixel.track("PageView");
-    GoogleAnalytics = makeGoogleAnalytics({ ID: "UA-200976932-1" });
+    GoogleAnalytics = makeGoogleAnalytics({ ID: "AW-342957453" });
     GoogleAnalytics.initialize();
   }
 
