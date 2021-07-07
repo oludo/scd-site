@@ -1,4 +1,4 @@
-export default function makeGoogleAnalytics({ ID }) {
+export default function makeGoogleAnalytics({ ID, tags = [] }) {
   function initialize() {
     const ga = document.createElement("script");
     ga.setAttribute("defer", true);
@@ -8,13 +8,14 @@ export default function makeGoogleAnalytics({ ID }) {
     window.dataLayer = window.dataLayer || [];
     gtag("js", new Date());
     gtag("config", ID);
+    tags.forEach((tag) => gtag("config", tag));
   }
 
   function gtag() {
     dataLayer.push(arguments);
   }
 
-  function reportConvertion(send_to, url) {
+  function reportConversion(send_to, url) {
     var callback = function () {
       if (typeof url != "undefined") {
         window.location = url;
@@ -31,6 +32,6 @@ export default function makeGoogleAnalytics({ ID }) {
 
   return Object.freeze({
     initialize,
-    reportConvertion,
+    reportConversion,
   });
 }

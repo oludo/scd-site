@@ -18,7 +18,10 @@ export default function LandingPage({
     FacebookPixel = makeFacebookPixel({ ID: "152464016914795" });
     FacebookPixel.initialize();
     FacebookPixel.track("PageView");
-    GoogleAnalytics = makeGoogleAnalytics({ ID: "AW-342957453" });
+    GoogleAnalytics = makeGoogleAnalytics({
+      ID: "G-1ZTFK10WBX",
+      tags: ["AW-342957453"],
+    });
     GoogleAnalytics.initialize();
   }
 
@@ -28,7 +31,7 @@ export default function LandingPage({
         className={`btn ${variant}`}
         onClick={() => {
           FacebookPixel.track("Contact");
-          GoogleAnalytics.reportConvertion("AW-342957453/84O5CMDattECEI27xKMB");
+          GoogleAnalytics.reportConversion("AW-342957453/XrJYCOrov9ECEI27xKMB");
           window.open(href, "_blank");
         }}
       >
