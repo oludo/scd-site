@@ -28,7 +28,8 @@ export default function LandingPage({
         className={`btn ${variant}`}
         onClick={() => {
           FacebookPixel.track("Contact");
-          location.href = href;
+          GoogleAnalytics.reportConvertion("AW-342957453/84O5CMDattECEI27xKMB");
+          window.open(href, "_blank");
         }}
       >
         <AiOutlineWhatsApp className="btn__icon-left" />
